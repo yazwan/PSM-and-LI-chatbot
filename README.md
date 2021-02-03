@@ -15,3 +15,4 @@ Follow the step to run the chatbot in localhost:
 Next, we want to open the website but there are few things need to be change in the website code.
 https://github.com/yazwan/PSM-LI-Website Download this in your Htdoc folder, Xampp.
 
+![alt text](http://url/to/img.png)
