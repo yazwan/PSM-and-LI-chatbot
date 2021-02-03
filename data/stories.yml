@@ -1,0 +1,143 @@
+version: "2.0"
+
+stories:
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: student choose PSM to schedule
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: choose_psm
+  - action: utter_psm
+  - intent: schedulepsm
+  - action: utter_psm_ans_schedule
+
+- story: student choose PSM to guideline
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: choose_psm
+  - action: utter_psm
+  - intent: guidelinepsm
+  - action: utter_psm_ans_guideline
+
+- story: student choose PSM to find comittee
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: choose_psm
+  - action: utter_psm
+  - intent: comitteepsm
+  - action: utter_psm_ans_comittee
+
+- story: student choose LI to schedule
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: choose_li
+  - action: utter_li
+  - intent: scheduleli
+  - action: utter_li_ans_schedule
+
+- story: student choose LI to guideline
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: choose_li
+  - action: utter_li
+  - intent: guidelineli
+  - action: utter_li_ans_guideline
+
+- story: show report to student
+  steps:
+  - intent: what_report
+  - action: utter_report 
+# - story: happy path 
+#   steps:
+#   - intent: greet
+#   # - action: action_hello_world
+#   - action: utter_greet
+#   - intent: registry
+#   - action: isi_form
+#   - active_loop: isi_form
+#   - active_loop: null
+#   - action: utter_registered
+
+
+# - story: User interrupts the form and doesn't want to continue
+#   steps:
+#   - intent: registry
+#   - action: isi_form
+#   - active_loop: isi_form
+#   - intent: stop
+#   - action: action_deactivate_loop
+#   - active_loop: null
+
+# - story: Activating form
+#   steps:
+#   - intent: register
+#   - action: utter_register
+#   - action: user_details_form
+#   - action: utter_ask_matric
+#   - intent: my_matric
+#     entities:
+#     - matric: "A17CS0301"
+#   - slot_was_set:
+#       - matric: "A17CS0301"
+#   - action: utter_ask_username
+#   - intent: my_username
+#     entities:
+#     - username: "yazwan"
+#   - slot_was_set:
+#       - username: "yazwan"
+#   - action: utter_ask_fullname
+#   - intent: my_fullname
+#     entities:
+#     - fullname: "yazwan bin saedon"
+#   - slot_was_set:
+#       - fullname: "yazwan bin saedon"
+#   - action: utter_ask_email
+#   - intent: my_email
+#     entities:
+#     - email: "yazwansaedon@gmail.com"
+#   - slot_was_set:
+#       - email: "yazwansaedon@gmail.com"
+#   - action: utter_ask_pass1
+#   - intent: my_pass1
+#     entities:
+#     - pass1: "utmcbot"
+#   - slot_was_set:
+#       - pass1: "utmcbot"
+#   - action: utter_ask_confirm
+#   - intent: my_pass2
+#     entities:
+#     - confirm: "utmcbot"
+#   - slot_was_set:
+#       - confirm: "utmcbot"
+#   - action: utter_ask_course
+#   - intent: my_course
+#     entities:
+#     - course: "yazwan"
+#   - slot_was_set:
+#       - course: "scsr"
+#   - action: action_submit
+#   - action: utter_details_thanks

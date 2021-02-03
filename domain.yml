@@ -1,0 +1,190 @@
+version: "2.0"
+
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - register
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - choose_psm
+  - choose_li
+  - schedulepsm
+  - scheduleli
+  - Thanks
+  - guidelinepsm
+  - guidelineli
+  - comitteepsm
+  - what_report
+  # - out_of-scope
+  - chitchat 
+  - requestfeedback
+  - my_firstname:
+      use_entities:
+        - firstname
+  - my_lastname:
+      use_entities:
+        - lastname
+  - my_feedback:
+      use_entities:
+        - feedback
+
+entities:
+  - firstname
+  - lastname
+  - feedback
+
+slots:
+  firstname:
+    type: text
+  lastname:
+    type: text
+  feedback:
+    type: text
+
+actions:
+  - action_submit
+  - action_greet_user
+  - action_restart
+  
+forms:
+  user_details_form:
+    lastname:
+      - type: from_entity
+        entity: lastname
+    firstname:
+      - type: from_entity
+        entity: firstname
+    feedback:
+      - type: from_entity
+        entity: feedback
+
+responses:
+
+
+  utter_greet:
+  - text: "Hey! Welcome to PSM and LI Chatbot. Do you want to talk about PSM or LI? If you have any question just say 'Hi'"
+    buttons: 
+    - title: "PSM"
+      payload: "/choose_psm"
+    - title: "LI"
+      payload: "/choose_li"
+    - title: "Feedback"
+      payload: "/requestfeedback"
+
+  utter_report:
+  - text: "Maybe this website will help you finding what kind of report you looking for. https://engineering.utm.my/computing/psm/psm-materials/"
+    buttons:
+    - title: "Looking for menu press here="
+      payload: "/greet"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_registered:
+  - text: "You've registered"
+
+  utter_register:
+  - text: "You are going to register \nMatric ID:\nUsername:\nFullname:\nEmail:\nPassword:\nConfirm password:\nCourse:"
+
+  utter_goodbye:
+  - text: "Bye-bye"
+  - text: "Have a nice day"
+  - text: "See you again"
+  - text: "Dont forget to hi my anytime if you have questions. Bye Bye!"
+  - text: "Thank you spending time with me, see you again"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_tell_name:
+  - text: "My name is YAZUBOT"
+
+  utter_loadingfeedback:
+  - text: "You want to give a feedback? I like to hear your review about me."
+  
+  utter_ask_firstname:
+  - text: Please provide your firstname.
+  utter_ask_lastname:
+  - text: Please provide your lastname.
+  utter_ask_feedback:
+  - text: Please provide your feedback. Start with word 'review:'
+  
+  utter_out_of_scope:
+  - text: "Sorry, I didn't get what you said. Please rephrase what you said."
+
+  utter_psm:
+  - text: "PSM? Okay what can I help you?"
+    buttons: 
+    - title: "PSM Schedule"
+      payload: "/schedulepsm"
+    - title: "PSM Guideline"
+      payload: "/guidelinepsm"
+    - title: "Comittee Member"
+      payload: "/comitteepsm"
+
+  utter_psm_ans_schedule:
+  - text: "The date of PSM is as shown below https://engineering.utm.my/computing/psm/wp-content/uploads/sites/104/2020/10/PSM2-Calendar-20202021-1-v1.pdf"
+    buttons:
+    - title: "Back"
+      payload: "/greet"
+  utter_psm_ans_guideline:
+  - text: "The guideline should is here https://engineering.utm.my/computing/psm/2020/10/19/psm-guideline-for-sem1_20202021/"
+    buttons:
+    - title: "Back"
+      payload: "/greet"
+  utter_psm_ans_comittee:
+  - text: "The comittee is shown in the website https://engineering.utm.my/computing/psm/committee-member/"
+    buttons:
+    - title: "Back"
+      payload: "/greet"
+
+  utter_li:
+  - text: "LI? Okay what can I help you?"
+    buttons: 
+    - title: "LI Schedule"
+      payload: "/scheduleli"
+    - title: "LI Guideline"
+      payload: "/guidelineli"
+  
+  utter_li_ans_schedule:
+  - text: "The date is not update yet "
+    buttons:
+    - title: "Back"
+      payload: "/greet"
+  utter_li_ans_guideline:
+  - text: "The date would be as shown below http://its.utm.my/itsv4/index.php?option=guide"
+    buttons:
+    - title: "Back"
+      payload: "/greet"
+  utter_details_thanks:
+  - text: "Thanks for your valuable time. \n Firstname: {firstname} \n lastname: {lastname}\n Feedback : {feedback}"
+
+  utter_thanks:
+  - text: "You're welcome!"
+  - text: "Anytime! hi me again if you have questions"
+  - text: "Just doing my job"
+
+  utter_chitchat/ask_name:
+    - image: "https://i.imgur.com/zTvA58i.jpeg"
+      text: Hello, my name is Yazu Bot.
+    - text: I am called Yazu Bot!
+
+  utter_chitchat/ask_weather:
+    - text: Oh, it does look sunny right now in Malaysia.
+      image: "https://i.imgur.com/vwv7aHN.png"
+    - text: I am not sure of the whole week but I can see the sun is out today.
+  
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

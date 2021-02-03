@@ -1,0 +1,245 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - monin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - Thanks
+    - Thank you
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: choose_psm
+  examples: |
+    - PSM
+    - psm
+    - Psm
+    - I want to know about the PSM
+    - Get into PSM
+    - Tell me about PSM
+    - Show me PSM
+    - Open PSM
+    - open psm
+    - run psm
+    - run PSM
+
+- intent: choose_li
+  examples: |
+    - [LI]
+    - [li]
+    - [Li]
+    - I want to know about the [li]
+    - Get into [li]
+    - Tell me about [li]
+    - Show me [li]
+    - Open [li]
+    - open [LI]
+    - run [li]
+    - run [li]
+
+- intent: what_report
+  examples: |
+    - What is report
+    - Show me example report
+    - PSM report
+    - LI report
+    - Show me report template
+
+- intent: schedulepsm
+  examples: |
+    - Schedule of PSM
+    - What is the schedule of PSM
+    - date of PSM
+    - PSM presentation date
+    - PSM Schedule
+
+- intent: scheduleli
+  examples: |
+    - Schedule of LI
+    - What is the schedule of LI
+    - date of LI
+    - LI presentation date
+    - LI Schedule
+    - li schedule
+
+- intent: guidelinepsm
+  examples: |
+    - I want to know guideline for PSM
+    - What is the guideline for PSM
+    - Do you have guideline for psm
+    - PSM Guideline
+    - psm guideline
+
+- intent: guidelineli
+  examples: |
+    - I want to know guideline for LI
+    - What is the guideline for LI
+    - Do you have guideline for LI
+    - LI Guideline
+
+- intent: comitteepsm
+  examples: |
+    - I want to know who is the comittee of psm
+    - who should i looking for who in charge in psm
+    - who is psm coordinator
+    - psm coordinator
+    - who is the committee
+    - show me committee
+
+- intent: requestfeedback
+  examples: |
+    - I want to give feedback
+    - feedback
+    - feedback on you
+    - i want to give my feedback
+    - what to procedure to give feedback
+    - fill the feedback form
+    - how to fill the feedback form
+    - is there any feedback form
+    - i want to give my review of chatbot
+    - do you want to hear my review on you?
+
+- intent: my_firstname
+  examples: |
+    - my firstname is [yazwan]{"entity":"firstname"}
+    - [aiman]{"entity":"firstname"}
+    - [ain]{"entity":"firstname"} is my username
+    - username is [hazinah]{"entity":"firstname"}
+    - my firstname is [Hazinah]{"entity":"firstname"}
+    - [Hazwadi]{"entity":"firstname"}
+    - [Jim]{"entity":"firstname"} is my username
+    - username is [jim]{"entity":"firstname"}
+    - [Jim]{"entity":"firstname"} is my username
+    - username is [jim]{"entity":"firstname"}
+
+- intent: my_lastname
+  examples: |
+    - lastname is [saedon]{"entity":"lastname"}
+    - [aiman]{"entity":"lastname"} is my lastname
+    - it's [adam]{"entity":"lastname"}
+    - [naufal]{"entity":"lastname"}
+    - [azli]{"entity":"lastname"}
+    - lastname is [kutty]{"entity":"lastname"}
+    - [mammy]{"entity":"lastname"} is my lastname
+    - it's [Haswadi]{"entity":"lastname"}
+    - [naufal]{"entity":"lastname"}
+    - [azli]{"entity":"lastname"}
+
+- intent: my_feedback
+  examples: |
+    - review [it still need some imrovement]{"entity":"feedback"}
+    - review [it's good]{"entity":"feedback"}
+    - review [can be improve]{"entity":"feedback"}
+    - review [button works]{"entity":"feedback"}
+    - review [it's awesome]{"entity":"feedback"}
+    - review [it not showing me the intern placement]{"entity":"feedback"}
+    - review [it not working well on button]{"entity":"feedback"}
+
+- intent: Thanks
+  examples: |
+    - [Thanks]
+    - [thank you]
+    - [thank you for your time]
+    - [Thanks] boi
+    - [thanks] for the information
+    - [thank] you boy
+    - [thanks] it's been pleasure
+
+
+- intent: chitchat/ask_name
+  examples: |
+    - What is your name?
+    - May I know your name?
+    - What do people call you?
+    - Do you have a name for yourself?
+- intent: chitchat/ask_weather
+  examples: |
+    - What's the weather like today?
+    - Does it look sunny outside today?
+    - Oh, do you mind checking the weather for me please?
+    - I like sunny days in Malaysia.
+
